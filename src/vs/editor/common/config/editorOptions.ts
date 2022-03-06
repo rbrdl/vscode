@@ -269,9 +269,10 @@ export interface IEditorOptions {
 	 * When `wordWrap` = "on", the lines will wrap at the viewport width.
 	 * When `wordWrap` = "wordWrapColumn", the lines will wrap at `wordWrapColumn`.
 	 * When `wordWrap` = "bounded", the lines will wrap at min(viewport width, wordWrapColumn).
+	 * When `wordWrap` = "padded", the lines will wrap at the viewport width minus a padding of `wordWrapPadding`.
 	 * Defaults to "off".
 	 */
-	wordWrap?: 'off' | 'on' | 'wordWrapColumn' | 'bounded';
+	wordWrap?: 'off' | 'on' | 'wordWrapColumn' | 'bounded' | 'padded';
 	/**
 	 * Override the `wordWrap` setting.
 	 */
@@ -286,9 +287,15 @@ export interface IEditorOptions {
 	 * When `wordWrap` = "on", the lines will wrap at the viewport width.
 	 * When `wordWrap` = "wordWrapColumn", the lines will wrap at `wordWrapColumn`.
 	 * When `wordWrap` = "bounded", the lines will wrap at min(viewport width, wordWrapColumn).
+	 * When `wordWrap` = "padded", the lines will wrap at the viewport width minus a padding of `wordWrapPadding`.
 	 * Defaults to 80.
 	 */
 	wordWrapColumn?: number;
+	/**
+	 * Controls the padding between the end of the lines and the viewport
+	 * Defaults to 5.
+	 */
+	wordWrapPadding?: number;
 	/**
 	 * Control indentation of wrapped lines. Can be: 'none', 'same', 'indent' or 'deepIndent'.
 	 * Defaults to 'same' in vscode and to 'none' in monaco-editor.
